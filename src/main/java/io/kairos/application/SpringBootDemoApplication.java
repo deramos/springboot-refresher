@@ -1,5 +1,6 @@
 package io.kairos.application;
 
+import io.kairos.application.model.Alien;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;

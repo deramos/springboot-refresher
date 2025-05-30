@@ -1,4 +1,4 @@
-package io.kairos.application;
+package io.kairos.application.model;
 
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package io.kairos.application;
+package io.kairos.application.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
