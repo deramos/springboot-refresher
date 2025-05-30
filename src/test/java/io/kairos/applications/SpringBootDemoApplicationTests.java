@@ -1,10 +1,10 @@
-package io.kairos.applications.springdemo;
+package io.kairos.applications;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringdemoApplicationTests {
+class SpringBootDemoApplicationTests {
 
 	@Test
 	void contextLoads() {
