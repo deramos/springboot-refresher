@@ -15,12 +15,13 @@ public class SpringBootDemoApplication {
 
 		ApplicationContext context = SpringApplication.run(SpringBootDemoApplication.class, args);
 
+		StudentService studentService = context.getBean(StudentService.class);
+
 		Student student = context.getBean(Student.class);
 		student.setRollNo(104);
 		student.setName("Chidera");
 		student.setMarks(98);
 
-		StudentService studentService = context.getBean(StudentService.class);
 		studentService.addStudent(student);
 
 		List<Student> students = studentService.getStudents();
