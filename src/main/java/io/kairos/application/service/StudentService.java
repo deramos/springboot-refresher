@@ -20,6 +20,6 @@ public class StudentService {
     }
 
     public void addStudent(Student student){
-        System.out.println("Student added");
+        studentRepository.save(student);
     }
 }
