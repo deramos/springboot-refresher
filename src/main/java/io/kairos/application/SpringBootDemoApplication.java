@@ -1,9 +1,6 @@
 package io.kairos.application;
 
-import io.kairos.application.model.Alien;
-import io.kairos.application.model.Laptop;
 import io.kairos.application.model.Student;
-import io.kairos.application.service.LaptopService;
 import io.kairos.application.service.StudentService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +16,7 @@ public class SpringBootDemoApplication {
 		ApplicationContext context = SpringApplication.run(SpringBootDemoApplication.class, args);
 
 		Student student = context.getBean(Student.class);
-		student.setRollNo(101);
+		student.setRollNo(104);
 		student.setName("Chidera");
 		student.setMarks(98);
 

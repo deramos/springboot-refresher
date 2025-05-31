@@ -1,1 +1,10 @@
-org/example/Main.class
+io/kairos/application/repository/LaptopRepository.class
+io/kairos/application/model/Desktop.class
+io/kairos/application/model/Computer.class
+io/kairos/application/model/Alien.class
+io/kairos/application/SpringBootDemoApplication.class
+io/kairos/application/model/Student.class
+io/kairos/application/repository/StudentRepository.class
+io/kairos/application/service/StudentService.class
+io/kairos/application/service/LaptopService.class
+io/kairos/application/model/Laptop.class
