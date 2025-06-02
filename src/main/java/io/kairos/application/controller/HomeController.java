@@ -1,5 +1,6 @@
 package io.kairos.application.controller;
 
+import io.kairos.application.model.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,16 @@ public class HomeController {
         mv.addObject("result", result);
         mv.setViewName("result");
 
+        return mv;
+    }
+
+    @RequestMapping("addAlien")
+    public ModelAndView addAlien(
+            @RequestParam("aid") int aid,
+            @RequestParam("aname") String aname,
+            ModelAndView mv) {
+
+        mv.setViewName("result");
         return mv;
     }
 }
