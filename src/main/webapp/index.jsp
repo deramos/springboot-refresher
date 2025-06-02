@@ -4,7 +4,7 @@
     <body>
         <h2> Hello World !!! </h2>
 
-        <form action="add">
+        <form action="addAlien">
             <label for="aid"> Enter Alien ID: </label>
             <input type="text" id="aid" name="aid"><br>
             <label for="aname"> Enter Alien Name: </label>
