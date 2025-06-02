@@ -1,8 +1,10 @@
 package io.kairos.application.controller;
 
+import io.kairos.application.model.Alien2;
 import io.kairos.application.model.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -31,10 +33,10 @@ public class HomeController {
 
     @RequestMapping("addAlien")
     public ModelAndView addAlien(
-            @RequestParam("aid") int aid,
-            @RequestParam("aname") String aname,
+            @ModelAttribute Alien2 alien,
             ModelAndView mv) {
 
+        System.out.println(alien);
         mv.setViewName("result");
         return mv;
     }
