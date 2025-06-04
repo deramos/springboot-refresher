@@ -12,4 +12,6 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
 
     @Query("select s from Student s where s.name = ?1")
     List<Student> findByName(String name);
+
+    List<Student> findByMarksGreaterThan(int marks);
 }

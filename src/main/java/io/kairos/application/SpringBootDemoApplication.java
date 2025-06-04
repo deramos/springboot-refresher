@@ -29,7 +29,7 @@ public class SpringBootDemoApplication {
 		System.out.println(s.orElse(null));
 
 		System.out.println(repo.findByName("Kamsi"));
-
+		System.out.println(repo.findByMarksGreaterThan(75));
 	}
 
 }
