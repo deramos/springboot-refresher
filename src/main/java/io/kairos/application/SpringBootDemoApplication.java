@@ -1,6 +1,7 @@
 package io.kairos.application;
 
 import io.kairos.application.model.Student;
+import io.kairos.application.repository.StudentRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -21,7 +22,8 @@ public class SpringBootDemoApplication {
 		s2.setMarks(90);
 		s2.setName("Nkem");
 
-
+		StudentRepository repo = context.getBean(StudentRepository.class);
+		repo.save(s1);
 
 	}
 
