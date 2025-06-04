@@ -6,6 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.util.Optional;
+
 @SpringBootApplication
 public class SpringBootDemoApplication {
 
@@ -23,7 +25,10 @@ public class SpringBootDemoApplication {
 		s2.setName("Nkem");*/
 
 		StudentRepository repo = context.getBean(StudentRepository.class);
-		System.out.println(repo.findAll());
+		Optional<Student> s = repo.findById(3);
+		System.out.println(s.orElse(null));
+
+		System.out.println(repo.findByName("Kamsi"));
 
 	}
 
