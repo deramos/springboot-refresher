@@ -1,7 +1,7 @@
 package io.kairos.application.service;
 
 import io.kairos.application.model.Student;
-import io.kairos.application.repository.OldStudentRepository;
+import io.kairos.application.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,14 +10,14 @@ import java.util.List;
 @Service
 public class StudentService {
 
-    private OldStudentRepository studentRepository;
+    private StudentRepository studentRepository;
 
-    public OldStudentRepository getStudentRepository() {
+    public StudentRepository getStudentRepository() {
         return studentRepository;
     }
 
     @Autowired
-    public void setStudentRepository(OldStudentRepository studentRepository) {
+    public void setStudentRepository(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
 
