@@ -23,13 +23,13 @@ public class SpringBootDemoApplication {
 		s2.setRollNo(3);
 		s2.setMarks(90);
 		s2.setName("Nkem");*/
-
-		StudentRepository repo = context.getBean(StudentRepository.class);
-		Optional<Student> s = repo.findById(3);
-		System.out.println(s.orElse(null));
-
-		System.out.println(repo.findByName("Kamsi"));
-		System.out.println(repo.findByMarksGreaterThan(75));
+//
+//		StudentRepository repo = context.getBean(StudentRepository.class);
+//		Optional<Student> s = repo.findById(3);
+//		System.out.println(s.orElse(null));
+//
+//		System.out.println(repo.findByName("Kamsi"));
+//		System.out.println(repo.findByMarksGreaterThan(75));
 	}
 
 }
