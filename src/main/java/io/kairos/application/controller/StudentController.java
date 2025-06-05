@@ -24,7 +24,7 @@ public class StudentController {
         return ResponseEntity.ok(students);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{studentId}")
     public ResponseEntity<Student> getStudent(@PathVariable int studentId) {
         Student student = studentService.getStudent(studentId);
         if (student.getRollNo() > 0)

@@ -31,6 +31,7 @@ public class StudentService {
     }
 
     public Student getStudent(int studentId) {
+        System.out.println("Inside get student by Id");
         Optional<Student> student = studentRepository.findById(studentId);
         return student.orElseGet(Student::new);
     }
