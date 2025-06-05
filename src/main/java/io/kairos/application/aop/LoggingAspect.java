@@ -14,11 +14,11 @@ import org.springframework.stereotype.Component;
 public class LoggingAspect {
     private static final Logger LOGGER = LoggerFactory.getLogger(LoggingAspect.class);
 
-    @Before("execution(* io.kairos.application.service.StudentService.*(..))")
-    public void logMethodCall(JoinPoint point) {
-        System.out.println(point.getSourceLocation() + ": " + point.getSignature().getName());
-        LOGGER.info("Service Called");
-    }
+//    @Before("execution(* io.kairos.application.service.StudentService.*(..))")
+//    public void logMethodCall(JoinPoint point) {
+//        System.out.println(point.getSourceLocation() + ": " + point.getSignature().getName());
+//        LOGGER.info("Service Called");
+//    }
 
     @After("execution(* io.kairos.application.service.StudentService.*(..))")
     public void executeMethodCall(JoinPoint point) {

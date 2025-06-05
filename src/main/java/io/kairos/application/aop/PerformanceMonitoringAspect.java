@@ -1,5 +1,6 @@
 package io.kairos.application.aop;
 
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.slf4j.Logger;
@@ -12,10 +13,18 @@ public class PerformanceMonitoringAspect {
     private static final Logger LOGGER = LoggerFactory.getLogger(PerformanceMonitoringAspect.class);
 
     @Around("execution(* io.kairos.application.service.StudentService.*(..))")
-    public void monitorTime() {
+    public Object monitorTime(ProceedingJoinPoint jp) {
+        Object returnObject = null;
         long start = System.currentTimeMillis();
+        try {
+            returnObject = jp.proceed();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
         long end = System.currentTimeMillis();
 
-        LOGGER.info("Time Taken: {}", end - start);
+        LOGGER.info("Time Taken by {}(): {} milliseconds", jp.getSignature().getName(), end - start);
+
+        return returnObject;
     }
 }
