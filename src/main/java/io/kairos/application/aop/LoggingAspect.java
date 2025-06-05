@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class LoggingAspect {
     private static final Logger LOGGER = LoggerFactory.getLogger(LoggingAspect.class);
 
-    @Before("")
+    @Before("execution(* io.kairos.application.service.StudentService.*(..))")
     public void logMethodCal() {
         LOGGER.info("Service Called");
     }
