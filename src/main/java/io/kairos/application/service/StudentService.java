@@ -35,4 +35,9 @@ public class StudentService {
         Optional<Student> student = studentRepository.findById(studentId);
         return student.orElseGet(Student::new);
     }
+
+    public Student createStudent(Student student) {
+        System.out.println("Creating new student");
+        return studentRepository.save(student);
+    }
 }

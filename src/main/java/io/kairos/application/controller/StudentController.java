@@ -2,29 +2,34 @@ package io.kairos.application.controller;
 
 import io.kairos.application.model.Student;
 import io.kairos.application.service.StudentService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.web.csrf.CsrfToken;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/student")
 public class StudentController {
 
     @Autowired
     private StudentService studentService;
 
-    @GetMapping("")
+    @GetMapping("/csrf-token")
+    public CsrfToken getCsrfToken(HttpServletRequest request) {
+        return (CsrfToken) request.getAttribute("_csrf");
+    }
+
+    @GetMapping("/student")
     public ResponseEntity<List<Student>> getStudents() {
         List<Student> students = studentService.getStudents();
         return ResponseEntity.ok(students);
     }
 
-    @GetMapping("/{studentId}")
+    @GetMapping("/student/{studentId}")
     public ResponseEntity<Student> getStudent(@PathVariable int studentId) {
         Student student = studentService.getStudent(studentId);
         if (student.getRollNo() > 0)
@@ -32,5 +37,15 @@ public class StudentController {
         else
             return ResponseEntity.notFound().build();
 
+    }
+
+    @PostMapping("/student")
+    public ResponseEntity<Student> createStudent(@RequestBody Student student) {
+        Student newStudent = studentService.createStudent(student);
+        if (newStudent.getRollNo() > 0) {
+            return ResponseEntity.ok(newStudent);
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
     }
 }
